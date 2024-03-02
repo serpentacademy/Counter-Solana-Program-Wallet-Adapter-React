@@ -1,7 +1,6 @@
 import { WalletAdapterNetwork, WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider, useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { Button } from '@solana/wallet-adapter-react-ui/lib/types/Button';
 //import * as borsh from '@project-serum/borsh';
 import '../src/css/bootstrap.css'
 import {Buffer} from "buffer";
@@ -20,7 +19,6 @@ import {
     TorusWalletAdapter,
 
 } from '@solana/wallet-adapter-wallets';
-import fs from "fs";
 
 import { clusterApiUrl, Transaction, TransactionInstruction, SystemProgram, Keypair, LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js';
 import React, { FC, ReactNode, useMemo, useCallback, useState } from 'react';
@@ -124,8 +122,7 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 const Content: FC = () => {
-    let [lamports, setLamports] = useState(.1);
-    let [wallet, setWallet] = useState("9m5kFDqgpf7Ckzbox91RYcADqcmvxW4MmuNvroD5H2r9");
+    let [wallet, setWallet] = useState("");
     let [counterI, setCounterI] = useState(1)
     let [blockchainCounter, setBlockchainCounter] = useState("")
 
